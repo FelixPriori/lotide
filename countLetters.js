@@ -7,11 +7,10 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(sentence) {
+  sentence = sentence.split(' ').join('');
   const results = {};
   for (const letter of sentence) {
-    if (letter === ' '){
-      //do nothing
-    } else if (results[letter]) {
+    if (results[letter]) {
       results[letter]++;
     } else {
       results[letter] = 1;
