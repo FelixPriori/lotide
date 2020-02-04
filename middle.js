@@ -7,18 +7,18 @@ const compareElements = function(e1, e2) {
 };
 
 const eqArrays = function(arr1, arr2) {
-  equals = true;
-  i = 0;
-  while (equals && i < arr1.length){
+  let equals = true;
+  let i = 0;
+  while (equals && i < arr1.length) {
     equals = compareElements(arr1[i], arr2[i]);
     i++;
   }
-  if (equals){
+  if (equals) {
     return true;
   } else {
     return false;
   }
-}
+};
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
@@ -50,7 +50,7 @@ const middle = function(arr) {
     return middleValue;
 
   }
-}
+};
 
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
 

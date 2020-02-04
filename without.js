@@ -7,18 +7,18 @@ const compareElements = function(e1, e2) {
 };
 
 const eqArrays = function(arr1, arr2) {
-  equals = true;
-  i = 0;
-  while (equals && i < arr1.length){
+  let equals = true;
+  let i = 0;
+  while (equals && i < arr1.length) {
     equals = compareElements(arr1[i], arr2[i]);
     i++;
   }
-  if (equals){
+  if (equals) {
     return true;
   } else {
     return false;
   }
-}
+};
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
@@ -28,7 +28,7 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-const without = function (collection, unwanted) {
+const without = function(collection, unwanted) {
   let wanted = [];
   for (let item of collection) {
     if (unwanted.indexOf(item) === -1) {
@@ -38,5 +38,5 @@ const without = function (collection, unwanted) {
   return wanted;
 };
 
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]) // => [2, 3]
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]) // => ["1", "2"]
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => [2, 3]
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => ["1", "2"]
