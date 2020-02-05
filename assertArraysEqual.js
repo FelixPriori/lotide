@@ -9,6 +9,9 @@ const compareElements = function(e1, e2) {
 const eqArrays = function(arr1, arr2) {
   let equals = true;
   let i = 0;
+  if (!compareElements(arr1.length, arr2.length)){
+    return false;
+  }
   while (equals && i < arr1.length) {
     equals = compareElements(arr1[i], arr2[i]);
     i++;
