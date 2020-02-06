@@ -9,7 +9,7 @@ const compareElements = function(e1, e2) {
 const eqArrays = function(arr1, arr2) {
   let equals = true;
   let i = 0;
-  if (!compareElements(arr1.length, arr2.length)){
+  if (!compareElements(arr1.length, arr2.length)) {
     return false;
   }
   while (equals && i < arr1.length) {
@@ -38,7 +38,7 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-}
+};
 
 const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);
