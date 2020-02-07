@@ -1,47 +1,4 @@
-const compareElements = function(e1, e2) {
-  if (e1 === e2) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const eqArrays = function(arr1, arr2) {
-  let equals = true;
-  let i = 0;
-  if (!compareElements(arr1.length, arr2.length)) {
-    return false;
-  }
-  while (equals && i < arr1.length) {
-    equals = compareElements(arr1[i], arr2[i]);
-    i++;
-  }
-  if (equals) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
-  if (!compareElements(keys1.length, keys2.length)) {
-    return false;
-  }
-  for (const key of keys1) {
-    if (Array.isArray(object1[key])) {
-      if (!eqArrays(object1[key], object2[key])) {
-        return false;
-      }
-    } else if (!compareElements(object1[key], object2[key])) {
-      return false;
-    }
-  }
-  return true;
-};
+const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
@@ -53,6 +10,7 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
+module.exports = assertObjectsEqual;
 
 //tests
 
