@@ -18,7 +18,7 @@ const eqObjects = function(object1, object2) {
       return eqObjects(object1[key], object2[key]);
     } else if (!compareElements(object1[key], object2[key])) {
       return false;
-    } 
+    }
   }
   return true;
 };
@@ -43,7 +43,7 @@ module.exports = eqObjects;
 // const cd2 = { c: "1", d: ["2", 3, 4] };
 // console.log(eqObjects(cd, cd2)); // => false
 
-console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => true
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => false
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })) // => false
-console.log(eqObjects({ thing: { stuffs: 3, things: 2}, heyo: {heya: 1}}, { thing: { stuffs: 3, things: 2}, heyo: {heya: 1}})) // => true;
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
+console.log(eqObjects({ thing: { stuffs: 3, things: 2}, heyo: {heya: 1}}, { thing: { stuffs: 3, things: 2}, heyo: {heya: 1}})); // => true;
