@@ -1,0 +1,28 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelixPriori/lotide.git"
+  },
+  "author": "Felix Rioux Sabourin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelixPriori/lotide/issues"
+  },
+  "homepage": "https://github.com/FelixPriori/lotide#readme"
+}
