@@ -1,5 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
 const without = function(collection, unwanted) {
   let wanted = [];
   for (let item of collection) {
@@ -11,6 +9,3 @@ const without = function(collection, unwanted) {
 };
 
 module.exports = without;
-
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => [2, 3]
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => ["1", "2"]
