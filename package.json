@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@felixpriori/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library of helper functions, which is a clone of the lodash library, made for educational purposes.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
