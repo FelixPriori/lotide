@@ -16,5 +16,5 @@ describe("#compareElements", () => {
   });
   it("should return false if a number is passed as string compared to the same number as a number", () => {
     assert.equal(compareElements(1, '1'), false);
-  })
+  });
 });
