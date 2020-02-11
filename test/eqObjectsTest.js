@@ -1,25 +1,27 @@
 const eqObjects = require('../eqObjects');
 
+const assert = require('chai').assert;
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const ac = { a: "2", c: "3" };
-console.log(eqObjects(ab, ba)); // => true
-console.log(eqObjects(ab, ac)); // ==> false
-
-const abc = { a: "1", b: "2", c: "3" };
-const bcd = { b: "2", c: "3", d: "4" };
-const dcb = { d: "4", c: "3", b: "2" };
-console.log(eqObjects(ab, abc)); // => false
-console.log(eqObjects(dcb, bcd)); // => true;
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc)); // => true
-const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(eqObjects(cd, cd2)); // => false
-
-console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
-console.log(eqObjects({ thing: { stuffs: 3, things: 2}, heyo: {heya: 1}}, { thing: { stuffs: 3, things: 2}, heyo: {heya: 1}})); // => true;
+describe("#eqArrays", () => {
+  it("should return true when two objects with number values are completely identical", () => {
+    const ab = { a: "1", b: "2" };
+    const ba = { b: "2", a: "1" };
+    assert.equal(eqObjects(ab, ba), true);
+  });
+  it("should return false when two objects with number values are different", () => {
+    const ab = { a: "1", b: "2" };
+    const ac = { a: "2", c: "3" };
+    assert.equal(eqObjects(ab, ac), false);
+  });
+  it("should return true when objects of arrays are completely identical", () => {
+    const cd = { c: "1", d: ["2", 3] };
+    const dc = { d: ["2", 3], c: "1" };
+    assert.equal(eqObjects(cd, dc), true);
+  });
+  it("should return true when objects of objects are completeley identical", () => {
+    assert.equal(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+  });
+  it("should return true when objects of nested objects are completely identical", () => {
+    assert.equal(eqObjects({ thing: { stuffs: 3, things: 2}, heyo: {heya: 1}}, { thing: { stuffs: 3, things: 2}, heyo: {heya: 1}}), true);
+  });
+});
